@@ -24,7 +24,7 @@ from .sound import no_sound, sound
 from .transcribe import accentuate, no_tone, split_transcript, transcribe
 from .translate import translate
 from .util import cleanup, erase_fields, get_first, has_field, hide, set_all
-from wordfreq import zipf_frequency
+
 
 def get_classifier(hanzi, note):
     cs = dictionary.get_classifiers(hanzi)
