@@ -236,6 +236,15 @@ def fill_trad(hanzi, note):
     else:
         set_all(config['fields']['traditional'], note, to='')
 
+def fill_freq(hanzi, note):
+    if not get_first(config['fields']['frequency'], note) == '':
+        return
+
+    f = get_freq(hanzi)
+    if f is not None:
+        set_all(config['fields']['frequency'], note, to=t)
+    else:
+        set_all(config['fields']['traditional'], note, to='Frequency not found')
 
 def fill_ruby(hanzi, note):
     if has_field(config['fields']['transcription'], note):
