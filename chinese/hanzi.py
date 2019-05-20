@@ -23,7 +23,7 @@ from jieba import cut
 from .consts import HANZI_RANGE
 from .main import config, dictionary
 from .util import cleanup, get_first
-
+from wordfreq import zipf_frequency
 
 def get_silhouette(hanzi):
     def insert_spaces(p):
@@ -43,6 +43,8 @@ def get_simp(text):
 def get_trad(text):
     return dictionary.get_traditional(text)
 
+def get_freq(text):
+    return zipf_frequency(text,'zh')
 
 def has_hanzi(text):
     return search(f'[{HANZI_RANGE}]', text)
